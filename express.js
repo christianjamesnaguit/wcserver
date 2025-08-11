@@ -1,6 +1,9 @@
 import express from 'express';
+import path from 'path';
+import bodyParser from 'body-parser';
 const app = express();
 const __dirname = import.meta.dirname;
+const urlEncoderParser = bodyParser.urlencoded({extended: false});
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
@@ -36,12 +39,12 @@ app.get('/getStudent', (req, res) => {
 app.get('/adminForm', (req, res) => {
     res.sendFile(__dirname + "/pages/admin.htm")
 })
-app.get('/getAdmin', (req, res) => {
+app.post('/postAdmin', urlEncoderParser, (req, res) => {
     const response = {
-        adminID: req.query.adminID,
-        department: req.query.department,
-        firstName: req.query.firstName,
-        lastName: req.query.lastName,
+        adminID: req.body.adminID,
+        department: req.body.department,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
     }
     console.log("Response is ", response)
     res.end(`Received data: ${JSON.stringify(response)}`)
