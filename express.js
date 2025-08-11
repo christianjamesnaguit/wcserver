@@ -47,7 +47,7 @@ app.post('/postAdmin', urlEncoderParser, (req, res) => {
         lastName: req.body.lastName,
     }
     console.log("Response is ", response)
-    res.end(`Received data: ${JSON.stringify(response)}`)
+    res.end(`Posted data: ${JSON.stringify(response)}`)
 })
 
 app.get('/user', (req, res) => {
