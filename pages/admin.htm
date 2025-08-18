@@ -59,7 +59,7 @@
 <body>
     <div class="container">
         <h1>Admin Form</h1>
-        <form action="/postAdmin" method="post">
+        <form action="/uploadAdmin" enctype="multipart/form-data" method="post">
             <label for="adminID">Admin ID</label>
             <input type="text" id="adminID" name="adminID">
 
@@ -73,6 +73,11 @@
 
             <label for="lastName">Last Name</label>
             <input type="text" id="lastName" name="lastName">
+            <label for="file">Select file > </label>
+            
+            <hr>
+
+            <input type="file" id="file" name="file">
 
             <input type="submit" value="Submit">
         </form>
