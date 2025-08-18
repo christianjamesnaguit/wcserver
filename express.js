@@ -6,6 +6,8 @@ const __dirname = import.meta.dirname;
 const urlEncoderParser = bodyParser.urlencoded({extended: false});
 app.use(express.static('public'));
 
+// TJ WAS HERE
+
 // hello world
 
 app.get('/', (req, res) => {
