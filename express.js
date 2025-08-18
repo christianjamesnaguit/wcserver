@@ -49,7 +49,7 @@ app.post('/postAdmin', urlEncoderParser, (req, res) => {
     console.log("Response is ", response)
     res.end(`Posted data: ${JSON.stringify(response)}`)
 })
-
+// test output
 app.get('/user', (req, res) => {
     const userId = req.query.id;
     const userName = req.query.name;
