@@ -6,6 +6,8 @@ const __dirname = import.meta.dirname;
 const urlEncoderParser = bodyParser.urlencoded({extended: false});
 app.use(express.static('public'));
 
+// hello world
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/pages/home.htm")
 })
